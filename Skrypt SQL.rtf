@@ -1,0 +1,172 @@
+{\rtf1\ansi\ansicpg1250\deff0\nouicompat\deflang1045{\fonttbl{\f0\fnil\fcharset238 Calibri;}{\f1\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.18362}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\b\f0\fs24 Utworzenie tabeli czytelnicy\par
+\b0\fs22 CREATE TABLE czytelnicy (\par
+   id_czytelnika INT NOT NULL AUTO_INCREMENT , \par
+   Imi\'ea VARCHAR(20) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL , \par
+   Nazwisko VARCHAR(20) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL , \par
+   telefon VARCHAR(10) NOT NULL , \par
+   email VARCHAR(40) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL , \par
+   id_adresu INT NULL\par
+   PRIMARY KEY (id_czytelnika),\par
+   FOREIGN KEY (id_adresu) REFERENCES adresy(id_adresu)\par
+);\par
+\b\fs24 Uzupe\'b3nienie tabeli czytelnicy\fs22\par
+\b0 INSERT INTO czytelnicy (id_czytelnika, Imi\'ea, Nazwisko, telefon, email, id_adresu) VALUES (NULL, "Szczepan", "Wysocki", "791686196", "Szczepan Wysocki@gmail.com", NULL), (NULL, "Lech", "Nowicki","78062542" "echNowicki@gmail.com" NULL), (NULL, "Zygmunt", "Wojciechowski", "884676767", "ZygmuntWojsciechowski@gmail.com", NULL), (NULL, "Fryderyk", "Szyma\'f1ski", "785114390", "FryderykSzyma\'f1ski@gmail.com", NULL), (NULL, "Kacper", "Jaworski", "513730092", "KacperJaworski@gmail.com", NULL), (NULL, "Lucjan", "Wojciechowski", "517997114", "LucjanWojciechowski@gmail.com", NULL), (NULL, "Izydor", "Kalinowski", "607592444", "IzydorKalinowski@gmail.com", NULL), (NULL, "Sebastian", "Zawadzki", "673334336", "SebastianZawadzki@gmail.com", NULL), (NULL, "Justyna", "Kowalska", '675600324", "JustynaKowalska@gmail.com", NULL), (NULL, "W\'b3adys\'b3aw", "Czerwi\'f1ski", "664134553", "W\'b3adys\'b3awCzerwi\'f1ski@gmail.com", NULL)\par
+\b\fs24\par
+Utworzenie tabeli adresy\par
+\b0\fs22 CREATE TABLE adresy (\par
+id_adresu INT NOT NULL AUTO_INCREMENT , \par
+miasto VARCHAR(40) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL , \par
+ulica VARCHAR(40) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL , \par
+kodpocztowy VARCHAR(10) NOT NULL , \par
+PRIMARY KEY (id_adresu)\par
+);\par
+\par
+\b Uzupe\'b3enie tabeli adresy\fs24\par
+\b0\fs22 INSERT INTO `adresy` (`id_adresu`, `miasto`, `ulica`, `kodpocztowy`) VALUES (NULL, 'Gdynia', 'Orzechowa 93', '81-025'), (NULL, 'Gda\'f1sk', 'Dunikowskiego 88', '80-524'), (NULL, 'Szczecin', 'Przodownik\f1\lang1033\'f3w Pracy 144', '70-714'), (NULL, 'Pozna\f0\'f1', 'Sochaczewska 74', '60-645'), (NULL, 'Olsztyn', '\'aferomskiego Stefana 129', '10-352'), (NULL, 'Cz\'eastochowa', 'Bialska 127', '42-221'), (NULL, 'Opole', 'Szyma\'f1skiego Karola 133', '45-724'), (NULL, 'Cz\'eastochowa', 'Orzechowa 93', '42-280'), (NULL, '\'a3\f1\'f3d\f0\'9f', 'Kogucia 126', '91-601'), (NULL, 'Wroc\'b3aw', 'Zdu\'f1ska 29', '51-180')\par
+\par
+\b\fs24 Ustawienie adres\f1\'f3\f0 w czytelnik\f1\'f3\f0 w\b0\fs22\par
+UPDATE czytelnicy SET id_adresu = 1 WHERE id_czytelnika = 1\par
+UPDATE czytelnicy SET id_adresu = 2 WHERE id_czytelnika` = 2\par
+UPDATE czytelnicy SET id_adresu = 3 WHERE id_czytelnika = 3\par
+UPDATE czytelnicy SET id_adresu = 4 WHERE id_czytelnika = 4\par
+UPDATE czytelnicy SET id_adresu = 5 WHERE id_czytelnika = 5\par
+UPDATE czytelnicy SET id_adresu = 6 WHERE id_czytelnika = 6\par
+UPDATE czytelnicy SET id_adresu = 7 WHERE id_czytelnika = 7\par
+UPDATE czytelnicy SET id_adresu = 8 WHERE id_czytelnika = 8\par
+UPDATE czytelnicy SET id_adresu = 9 WHERE id_czytelnika = 9\par
+UPDATE czytelnicy SET id_adresu = 10 WHERE id_czytelnika = 10\b\lang1045\par
+\fs24\par
+Utowrzenie tabeli kategorie\b0\fs22\par
+CREATE TABLE kategorie(\par
+   id_kategorii INT NOT NULL AUTO_INCREMENT , \par
+   kategoria VARCHAR(40) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL , \par
+   PRIMARY KEY (id_kategorii)\par
+);\par
+\b\fs24 Uzupe\'b3nienie tabeli kategorie\b0\fs22\par
+INSERT INTO `kategorie` (`id_kategorii`, `kategoria`) VALUES (NULL, 'romans'),  (NULL, 'fantastyka'), (NULL, 'dramat'), (NULL, 'horror'), (NULL, 'powie\'9c\'e6 historyczna'), (NULL, 'opowiadanie'), (NULL, 'krymina\'b3'), (NULL, 'klasyka'), (NULL, 'thriller'), (NULL, 'powie\'9c\'e6 psychologiczna');\par
+\par
+\b\fs24 Utworzenie tabeli pracownicy\b0\fs22\par
+CREATE TABLE pracownicy ( \par
+    id_pracownika INT NOT NULL AUTO_INCREMENT , \par
+    Imi\'ea VARCHAR(20) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL , \par
+    Nazwisko VARCHAR(20) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL , \par
+    PRIMARY KEY (id_pracownika)\par
+);\par
+\b\fs24 Uzupe\'b3nienie tabeli pracownicy\b0\fs22\par
+INSERT INTO pracownicy (id_pracownika, Imi\'ea, Nazwisko) VALUES (NULL, "Aleksander", "Adamski"), (NULL, "Zygfryd", "Zaj\'b9c"), (NULL, "Bart\'b3omiej", "Rustkowski"), (NULL, "Ludwik", "Tomaszewski"), (NULL, "Henryk", "Sobczak"), (NULL, "Bart\'b3omiej", "Szczepia\'f1ski"), (NULL, "Konrad", "Koz\'b3owski"), (NULL, "Jan", "Grabowski"), (NULL, "Przemys\'b3aw", "Szyma\'f1ski"), (NULL, "Zbigniew", "Sawicki")\par
+\par
+\b\fs24 Utworzenie tabeli autorzy\par
+\b0\fs22 CREATE TABLE autorzy ( \par
+    id_autora INT NOT NULL AUTO_INCREMENT , \par
+    Imi\'ea VARCHAR(20) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL , \par
+    Nazwisko VARCHAR(20) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL , \par
+    PRIMARY KEY (id_autora)\par
+);\par
+\par
+\b\fs24 Uzupe\'b3nienie tabeli autorzy\b0\fs22\par
+INSERT INTO autorzy  (id_autora, Imi\'ea, Nazwisko) VALUES (NULL, "Henryk", "Sienkiewicz"), (NULL, "Ferenc", "Moln\f1\lang1033\'e1r\f0\lang1045 "\f1\lang1033 ), (NULL, \f0\lang1045 "\f1\lang1033 Juliusz\f0\lang1045 "\f1\lang1033 , \f0\lang1045 "\f1\lang1033 S\f0\'b3owacki"), (NULL, "Adam", "Mickiewicz"), (NULL, "Ignacy", 'Krasicki"), (NULL, "Fiodor", "Dostojewski"), (NULL, "Wis\'b3awa", "Szymborska"), (NULL, "Ryszard", "Kapu\'9cci\'f1ski"), (NULL, "W\'b3adys\'b3aw", "Reymont"), (NULL, "Jan", "Brzechwa")\par
+\b\par
+\fs24 Utworzenie tabela wydawnictwa\fs22\par
+\b0\lang1045 CREATE TABLE wydawnictwa ( \par
+    id_wydawnictwa INT NOT NULL AUTO_INCREMENT , \par
+    wydawnictwo VARCHAR(40) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL , \par
+    siedziba VARCHAR(30) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL , \par
+    PRIMARY KEY (id_wydawnictwa)\par
+);\par
+\par
+\b\fs24 Uzupe\'b3nienie tabeli wydawnictwa\b0\fs22\par
+INSERT INTO wydawnictwa (id_wydawnictwa, wydawnictwo, siedziba) VALUES (NULL, "MAG", "Warszawa"), (NULL, "Jaguar", "Warszawa"), (NULL, "Replika", "Pozna\'f1"), (NULL, "Nasza Ksi\'eagarnia", "Warszawa"), (NULL, "Dreams", "Rzesz\f1\lang1033\'f3w\f0\lang1045 "\f1\lang1033 ), (NULL, \f0\lang1045 "\f1\lang1033 Harlequin\f0\lang1045 "\f1\lang1033 , \f0\lang1045 "\f1\lang1033 Warszawa\f0\lang1045 "\f1\lang1033 ), (NULL, \f0\lang1045 "\f1\lang1033 Egmont Polska\f0\lang1045 "\f1\lang1033 , \f0\lang1045 "\f1\lang1033 Warszawa\f0\lang1045 "\f1\lang1033 ), (NULL, \f0\lang1045 "\f1\lang1033 Otwarte\f0\lang1045 "\f1\lang1033 , \f0\lang1045 "\f1\lang1033 Krak\'f3w\f0\lang1045 "\f1\lang1033 ), (NULL, \f0\lang1045 "\f1\lang1033 Papierowy Ksi\f0\'ea\'bfyc", "S\'b3upsk"), (NULL, "Fabryka S\'b3\f1\'f3w\f0\lang1045 "\f1\lang1033 , \f0\lang1045 "\f1\lang1033 Lublin\f0\lang1045 "\f1\lang1033 )\par
+\par
+\b\f0\fs24\lang1045 Utworzenie tabela recenzenci\par
+\b0\fs22 CREATE TABLE recenzenci(\par
+    id_recenzenta INT NOT NULL AUTO_INCREMENT,\par
+    Imi\'ea VARCHAR(20) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL , \par
+    Nazwisko VARCHAR(20) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL , \par
+    PRIMARY KEY (id_recenzenta)\par
+    );\par
+\par
+\b\fs24 Uzupe\'b3nienie tabeli recenzenci\b0\fs22\par
+\f1\lang1033 INSERT INTO recenzenci (id_recenzent\f0\lang1045 a\f1\lang1033 , Imi\f0\'ea, Nazwisko) VALUES (NULL, "Jacek ", "Kowlaski"), (NULL, "Seweryn", "Ostrowski"), (NULL, "Bronis\'b3aw ", "Kr\f1\'f3l\f0\lang1045 "\f1\lang1033 ), (NULL, \f0\lang1045 "\f1\lang1033 Konstanty\f0\lang1045 "\f1\lang1033 , \f0\lang1045 "\f1\lang1033 Koz\f0\'b3owski"), (NULL, "Borys", "Tomaszewski"), (NULL, "Justyna", "Zielni\'f1ska"), (NULL, "Gustaw", "Nowicki"), (NULL, "Ksper", "Dudek"), (NULL, "Eugeniusz", "Wieczorek"), (NULL, "Zachariasz", "Jab\'b3o\'f1ski");\par
+\par
+\b\fs24 Utworzenie tabeli recenzje\b0\fs22\par
+CREATE TABLE recenzje (\par
+    id_recenzji INT NOT NULL AUTO_INCREMENT,\par
+    id_recenzenta INT NULL,\par
+    ocena VARCHAR(10)  NULL , \par
+    PRIMARY KEY (id_recenzji),\par
+    FOREIGN KEY (id_recenzenta) REFERENCES recenzenci(id_recenzenta)\par
+    );\par
+\f1\par
+\b\f0\fs24\lang1045 Utworzenie tabeli ksiazki\fs22\par
+\b0 CREATE TABLE ksiazki (\par
+    id_ksiazki INT NOT NULL AUTO_INCREMENT , \par
+    tytol VARCHAR(40) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL ,\par
+    id_kategorii INT NULL,\par
+    id_autora INT NULL,\par
+    id_wydawnictwa INT NULL,\par
+    id_recenzji INT NULL,\par
+    ilosc INT NULL,\par
+    PRIMARY KEY (id_ksiazki),\par
+    FOREIGN KEY (id_kategorii) REFERENCES kategorie(id_kategorii),\par
+    FOREIGN KEY (id_autora) REFERENCES autorzy(id_autora),\par
+    FOREIGN KEY (id_wydawnictwa) REFERENCES wydawnictwa(id_wydawnictwa),\par
+    FOREIGN KEY (id_recenzji) REFERENCES recenzje(id_recenzji)\par
+);\par
+\par
+\b\fs24 Uzupe\'b3nienie tabeli ksiazki\b0\fs22\par
+INSERT INTO ksiazki (id_ksiazki, tytol, id_kategorii, id_autora, id_wydawnictwa, id_recenzji) VALUES (NULL, "Potop", 5, 1, 5, NULL, 24), (NULL, "Ch\'b3opcy z Placu Broni", 23, 2, 6, NULL,  12), (NULL, "Heban", 16, 8, 8, NULL, 7), (NULL, "Quo vadis", 5, 1, 7, NULL, 34), (NULL, "Widok z ziarnkiem piasku", 24, 7, 2, NULL, 17), (NULL, "Cesarz", 16, 8, 4, NULL, 5), (NULL, "W pustyni i w puszczy", 22, 1, 10, NULL, 21), (NULL, "Ch\'b3opi", 23, 9, 3, NULL, 46), (NULL, "Akademia pana Kleksa", 2, 10, 11, NULL, 32), (NULL, "Beniowski", 11, 3, 2, NULL, 9), (NULL, "Krzy\'bfacy", 5, 1, 11, NULL, 38), (NULL, "Ziemia obiecana", 23, 9, 9, NULL, 9), (NULL, "Testament", 24, 3, 2, NULL, 19), (NULL, "Gra\'bfyna", 11, 4, 8, NULL, 15), (NULL, "Bia\'b3e noce", 6, 6, 11, NULL, 3), (NULL, "Kaczka dziwaczka", 2, 10, 1, NULL, 27), (NULL, "Konrad Wallenrod", 5, 4, 4, NULL, 45), (NULL, "Idiota", 23, 6, 10, NULL, 8), (NULL, "Satyry", 25, 5, 9, NULL, 13), (NULL, "Pan Tadeusz", 11, 4, 1, NULL, 45), (NULL, "Wampir", 23, 9, 2, NULL, 16), (NULL, "\'afona modna", 25, 5, 5, NULL, 13), (NULL, "Zbrodnia i kara", 23, 6, 7, NULL, 24), (NULL, "Miracle Fair", 15, 7, 6, NULL, 11), (NULL, "Miko\'b3aja Do\'9cwiadczy\'f1skiego przypadki", 23, 5, 3, NULL, 20)\par
+\par
+\b\fs24 Uzupe\'b3nienie tabeli recenzje\par
+\b0\fs22 INSERT INTO recenzje (id_recenzji, id_recenzenta, ocena) VALUES (NULL, 5, 8), (NULL, 4, 7), (NULL, 9, 6), (NULL, 3, 5), (NULL, 7, 2), (NULL, 2, 9), (NULL, 10, 8), (NULL, 6, 4), (NULL, 1, 3), (NULL, 6, 6), (NULL, 5, 7), (NULL, 3, 8), (NULL, 10, 3), (NULL, 9, 5), (NULL, 4, 9), (NULL, 9, 4), (NULL, 8, 5), (NULL, 9, 2), (NULL, 5, 3), (NULL, 1, 7), (NULL, 4, 8), (NULL, 2, 6), (NULL, 9, 10), (NULL, 1, 7), (NULL, 6, 10)\par
+\par
+\b\fs24 Uzupe\'b3nienie tabeli ksiazki o recenzje\par
+\b0\fs22 UPDATE ksiazki SET id_recenzji = 1 WHERE id_ksiazki = 1\par
+UPDATE ksiazki SET id_recenzji = 2 WHERE id_ksiazki = 2\par
+UPDATE ksiazki SET id_recenzji = 3 WHERE id_ksiazki = 3\par
+UPDATE ksiazki SET id_recenzji = 4 WHERE id_ksiazki = 4\par
+UPDATE ksiazki SET id_recenzji = 5 WHERE id_ksiazki = 5\par
+UPDATE ksiazki SET id_recenzji = 6 WHERE id_ksiazki = 6\par
+UPDATE ksiazki SET id_recenzji = 7 WHERE id_ksiazki = 7\par
+UPDATE ksiazki SET id_recenzji = 8 WHERE id_ksiazki = 8\par
+UPDATE ksiazki SET id_recenzji = 9WHERE id_ksiazki = 9\par
+UPDATE ksiazki SET id_recenzji = 10 WHERE id_ksiazki = 10\par
+UPDATE ksiazki SET id_recenzji = 11 WHERE id_ksiazki = 11\par
+UPDATE ksiazki SET id_recenzji = 12 WHERE id_ksiazki = 12\par
+UPDATE ksiazki SET id_recenzji = 13 WHERE id_ksiazki = 13\par
+UPDATE ksiazki SET id_recenzji = 14 WHERE id_ksiazki = 14\par
+UPDATE ksiazki SET id_recenzji = 15 WHERE id_ksiazki = 15\par
+UPDATE ksiazki SET id_recenzji = 16 WHERE id_ksiazki = 16\par
+UPDATE ksiazki SET id_recenzji = 17 WHERE id_ksiazki = 17\par
+UPDATE ksiazki SET id_recenzji = 18 WHERE id_ksiazki = 18\par
+UPDATE ksiazki SET id_recenzji = 19 WHERE id_ksiazki = 19\par
+UPDATE ksiazki SET id_recenzji = 20 WHERE id_ksiazki = 20\par
+UPDATE ksiazki SET id_recenzji = 21 WHERE id_ksiazki = 21\par
+UPDATE ksiazki SET id_recenzji = 22 WHERE id_ksiazki = 22\par
+UPDATE ksiazki SET id_recenzji = 23 WHERE id_ksiazki = 23\par
+UPDATE ksiazki SET id_recenzji = 24 WHERE id_ksiazki = 24\par
+UPDATE ksiazki SET id_recenzji = 25 WHERE id_ksiazki = 25\par
+\par
+\b\fs24 Utworzenie tabeli wypozyczenia\b0\fs22\par
+CREATE TABLE wypozyczenia(\par
+    id_wypozyczenia INT NOT NULL AUTO_INCREMENT ,\par
+    id_czytelnika INT NOT NULL,\par
+    id_ksiazki INT NOT NULL,\par
+    data_wydania DATE NOT NULL DEFAULT CURRENT_DATE,\par
+    data_oddania DATE NULL,\par
+    id_pracownika INT NOT NULL,\par
+    PRIMARY KEY (id_wypozyczenia),\par
+    FOREIGN KEY (id_ksiazki) REFERENCES ksiazki(id_ksiazki),\par
+    FOREIGN KEY (id_czytelnika) REFERENCES czytelnicy(id_czytelnika),\par
+    FOREIGN KEy (id_pracownika) REFERENCES pracownicy(id_pracownika)\par
+    );\par
+\fs24\par
+\b Uzupe\'b3nienie tabeli wypozyczenia\par
+\b0\fs22 INSERT INTO wypozyczenia (id_wypozyczenia, id_czytelnika, id_ksiazki, data_wydania, data_oddania, id_pracownika) VALUES (1, 7, 6, "2020-06-28", NULL, 1), (NULL, 4, 18, "2020-06-17","2020-06-25", 6), (NULL, 2, 24, "2020-06-05", NULL, 9), (NULL, 9, 1, "2020-06-16", "2020-06-24", 4), (NULL, 6, 18, "2020-06-27", NULL, 9), (NULL, 6, 9, "2020-06-01", "2020-06-20', '4'), (NULL, 7, 11, "2020-06-11", NULL, 5), (NULL, 1, 25, "2020-05-21", "2020-06-05", 10), (NULL, 3, 4, "2020-06-06", NULL, 9), (NULL, 2, 16, "2020-06-25", NULL, 5)\par
+\par
+\par
+\b\par
+\b0\f1\lang21\par
+}
+ 
